@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ARTIFACT-BODY-START -->
+<title>Make AI Prove It</title>
+<meta name="description" content="AI isn't the goal. A better business is. Axcel helps you work out what actually needs to change first, and whether AI needs to be part of the answer at all.">
+<link rel="canonical" href="https://makeaiproveit.com/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#F6F3EE">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Axcel">
+<meta property="og:title" content="Make AI Prove It">
+<meta property="og:description" content="AI isn't the goal. A better business is. Axcel helps you work out what actually needs to change first, and whether AI needs to be part of the answer at all.">
+<meta property="og:url" content="https://makeaiproveit.com/">
+<meta property="og:image" content="https://makeaiproveit.com/share-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A team working through a plan together at a table covered with notes.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap">
+<style>
+/* ==========================================================================
+   AXCEL / MAKE AI PROVE IT
+   Layout pass. Copy unchanged.
+
+   Three real levels:
+     campaign  46-88   used four times on the page
+     section   30-56   major section headings
+     service   30-50   service group headings
+     body      18-20 / 1.5
+   Section padding 56-104. Content 1280. Nothing vertically centred in a
+   giant container. Section height is set by content.
+   ========================================================================== */
+
+:root{
+  --paper:#F6F3EE;
+  --paper-deep:#EEEAE3;
+  --ink:#101010;
+  --body:#26241F;
+  --soft:#57534D;
+  --black:#0C0C0C;
+  --on-black:#F6F3EE;
+  --on-black-dim:#ADA69D;
+  --pink:#BB2649;
+  --hair:#D5CFC5;
+
+  --font:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+  --fs-campaign:clamp(46px,6.2vw,88px);
+  --fs-section:clamp(30px,3.9vw,56px);
+  --fs-group:clamp(30px,3.5vw,50px);
+  --fs-lead:clamp(21px,1.85vw,26px);
+  --fs-body:clamp(18px,1.2vw,20px);
+  --fs-label:clamp(17px,1.25vw,19px);
+
+  --shell:1280px;
+  --gutter:clamp(24px,4.5vw,64px);
+  --bay:clamp(56px,7vw,104px);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--body);
+  font-family:var(--font);
+  font-size:var(--fs-body);
+  font-weight:400;
+  line-height:1.5;
+  letter-spacing:-.006em;
+  -webkit-font-smoothing:antialiased;
+}
+
+img{display:block;max-width:100%;height:auto}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--pink);outline-offset:4px}
+
+.campaign{ font-size:var(--fs-campaign); font-weight:800; line-height:.94; letter-spacing:-.036em; color:var(--ink); margin:0; text-transform:uppercase; }
+.section-h{ font-size:var(--fs-section); font-weight:700; line-height:1.06; letter-spacing:-.028em; color:var(--ink); margin:0; text-wrap:balance; }
+.lead{ font-size:var(--fs-lead); font-weight:500; line-height:1.32; letter-spacing:-.018em; color:var(--ink); }
+.pink{ color:var(--pink); }
+.dim{ color:var(--soft); }
+.shell{ max-width:var(--shell); margin-inline:auto; padding-inline:var(--gutter); }
+
+.cta{
+  display:inline-block; background:var(--pink); color:#fff;
+  font-size:16px; font-weight:600; letter-spacing:.04em;
+  text-transform:uppercase; line-height:1; padding:18px 28px;
+  text-decoration:none; transition:background .18s ease;
+}
+.cta:hover{ background:#9C1C3C; }
+.tlink{
+  display:inline-block; font-size:var(--fs-body); font-weight:500; color:var(--ink);
+  text-decoration:none; box-shadow:inset 0 -2px 0 0 var(--pink); padding-bottom:1px;
+}
+.tlink:hover{ color:var(--pink); }
+.arw{ display:block; color:var(--pink); flex:0 0 auto; }
+
+/* ================= NAV ================= */
+.top{ position:sticky; top:0; z-index:60; background:var(--paper); border-bottom:1px solid var(--hair); }
+.top-in{ display:flex; align-items:center; justify-content:space-between; gap:32px; height:84px; }
+.brand img{ height:52px; width:auto; }
+.ways{ display:flex; align-items:center; gap:36px; }
+.ways a{ font-size:17px; font-weight:500; letter-spacing:-.01em; color:var(--ink); text-decoration:none; }
+.ways a:hover{ color:var(--pink); }
+.ways .talk{ box-shadow:inset 0 -2px 0 0 var(--pink); padding-bottom:2px; }
+.burger{ display:none; background:none; border:0; padding:6px 0; font-family:var(--font); font-size:17px; font-weight:500; color:var(--ink); cursor:pointer; }
+.drawer{ display:none; }
+
+/* ================= 1 · OPENING · copy + photograph off the right edge ===== */
+.opening{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.04fr); align-items:stretch; }
+.opening-copy{
+  padding:clamp(40px,4.6vw,64px) var(--gutter) clamp(40px,4.6vw,64px)
+          max(var(--gutter), calc((100vw - var(--shell))/2 + var(--gutter)));
+  max-width:760px; justify-self:end; width:100%;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.opening-copy .section-h{ margin-top:22px; max-width:20ch; }
+.opening-outcome{ margin-top:20px; max-width:46ch; }
+.opening-prove{ margin-top:10px; font-size:var(--fs-lead); font-weight:600; letter-spacing:-.018em; line-height:1.25; color:var(--pink); }
+.opening-copy .cta{ margin-top:30px; align-self:flex-start; }
+.opening-shot{ position:relative; min-height:clamp(320px,42vw,540px); }
+.opening-shot img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 10%; }
+
+/* ================= 2 · PROBLEMS · dense left column + one photograph ===== */
+.problems{ padding-block:var(--bay); }
+.problems-in{
+  display:grid; grid-template-columns:minmax(0,1.38fr) minmax(0,1fr);
+  gap:clamp(32px,4.5vw,72px); align-items:start;
+}
+.problems .section-h{ max-width:20ch; }
+.problem-set{ margin-top:clamp(26px,3vw,38px); }
+.problem-set li{
+  display:grid; grid-template-columns:auto minmax(0,1fr); gap:18px; align-items:start;
+  font-size:clamp(20px,1.7vw,24px); font-weight:500;
+  line-height:1.28; letter-spacing:-.018em; color:var(--ink);
+}
+.problem-set li + li{ margin-top:16px; }
+.problem-set li::before{ content:""; width:14px; height:14px; border-radius:50%; background:var(--pink); margin-top:.44em; }
+.problems-after{ margin-top:clamp(30px,3.4vw,44px); max-width:50ch; }
+.problems-after .lead{ margin-bottom:8px; }
+.problems-shot img{ width:100%; }
+
+/* ================= 3 · WANTS · outcomes, no image ================= */
+.wants{ padding-block:var(--bay); background:var(--paper-deep); }
+.wants-in{ display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(32px,4.5vw,72px); align-items:start; }
+.wants-list li{ font-weight:800; letter-spacing:-.032em; line-height:1.06; color:var(--ink); text-transform:uppercase; }
+.wants-list .big{ font-size:clamp(30px,3.6vw,52px); }
+.wants-list .mid{ font-size:clamp(24px,2.6vw,38px); color:var(--soft); font-weight:600; }
+.wants-list .pink{ color:var(--pink); }
+.wants-after{ margin-top:clamp(26px,3vw,40px); max-width:46ch; }
+.wants-after .lead{ margin-bottom:6px; }
+
+/* ================= 4 · PEOPLE · copy only ================= */
+.people{ padding-block:var(--bay); }
+.people-in{ display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:clamp(32px,4.5vw,72px); align-items:start; }
+.people-in .section-h{ max-width:13ch; }
+.people-copy{ max-width:58ch; }
+.people-copy p + p{ margin-top:16px; }
+.people-copy .keep{ color:var(--ink); font-weight:600; }
+
+/* ================= 5 · IDEA · statement + the concept photograph ======== */
+.idea{ padding-block:var(--bay); background:var(--paper-deep); }
+.idea-in{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.8fr); gap:clamp(32px,5vw,80px); align-items:center; }
+.idea .quote{
+  max-width:20ch; font-size:clamp(30px,3.4vw,48px); font-weight:700;
+  line-height:1.1; letter-spacing:-.028em; color:var(--pink);
+}
+.idea img{ width:100%; }
+
+/* ================= 6 · PROOF TEST ================= */
+.test{ background:var(--black); color:var(--on-black-dim); padding-block:clamp(56px,6.2vw,86px) clamp(40px,4.3vw,60px); }
+.test .section-h{ color:var(--on-black); max-width:24ch; }
+.six{
+  margin-top:clamp(40px,4.6vw,68px);
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:clamp(40px,6vw,110px); row-gap:clamp(32px,3.6vw,52px);
+}
+.six h3{ margin:0 0 10px; font-size:var(--fs-label); font-weight:700; letter-spacing:.09em; line-height:1.2; text-transform:uppercase; color:var(--pink); }
+.six p{ font-size:clamp(20px,1.7vw,24px); font-weight:500; line-height:1.3; letter-spacing:-.018em; color:var(--on-black); max-width:28ch; }
+.verdict{ margin-top:clamp(40px,4.2vw,60px); }
+.verdict p{
+  font-size:clamp(32px,4.6vw,68px);
+  font-weight:800; line-height:1; letter-spacing:-.035em;
+  color:var(--pink); text-transform:uppercase;
+}
+.verdict .a{ display:block; }
+.verdict .b{ display:block; font-size:.87em; margin-top:.42em; }
+
+/* ================= 7 · LOSES ================= */
+.loses{ padding-block:clamp(48px,5vw,76px) var(--bay); }
+.loses-in{ display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:clamp(32px,4.5vw,72px); align-items:start; }
+.loses .section-h{ max-width:12ch; }
+.loses .fine{ margin-top:16px; font-size:var(--fs-lead); font-weight:500; color:var(--ink); letter-spacing:-.018em; }
+.maybe li{
+  display:grid; grid-template-columns:auto minmax(0,1fr); gap:18px; align-items:start;
+  font-size:clamp(19px,1.5vw,22px); line-height:1.4; letter-spacing:-.012em; color:var(--body);
+}
+.maybe li + li{ margin-top:16px; }
+.maybe .arw{ margin-top:.42em; }
+.loses-point{ margin-top:clamp(40px,4.6vw,68px); }
+.loses-point .section-h{ max-width:22ch; }
+
+/* ================= 8 · SERVICES ================= */
+.svc-open{ padding-block:var(--bay) clamp(28px,3.4vw,44px); }
+.svc-open .section-h{ max-width:18ch; }
+.svc-open .intro{ margin-top:20px; max-width:48ch; font-size:var(--fs-lead); font-weight:500; line-height:1.35; letter-spacing:-.018em; color:var(--ink); }
+
+.grp{ padding-block:clamp(44px,5vw,76px); }
+.grp.tint{ background:var(--paper-deep); }
+.grp-name{
+  font-size:var(--fs-group); font-weight:700;
+  line-height:1.06; letter-spacing:-.02em;
+  text-transform:none; color:var(--ink); margin:0;
+}
+.grp-name .stop{ color:var(--pink); }
+
+/* text + text, heading held left */
+.grp-split .grp-in{
+  display:grid; grid-template-columns:minmax(0,42%) minmax(0,54%);
+  justify-content:space-between; gap:clamp(28px,3vw,48px); align-items:start;
+}
+/* text + text, two services under a full width heading */
+.grp-wide .grp-set{
+  margin-top:clamp(26px,3vw,40px);
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:clamp(40px,6vw,100px); row-gap:clamp(32px,4vw,52px);
+}
+.grp-set .item{ align-self:start; }
+/* text + photograph */
+.grp-shot .grp-body{
+  margin-top:clamp(26px,3vw,40px);
+  display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+  gap:clamp(32px,4.5vw,72px); align-items:start;
+}
+.grp-shot.flip .grp-body{ grid-template-columns:minmax(0,1fr) minmax(0,1.05fr); }
+.grp-shot.flip .grp-body .pic{ order:-1; }
+.grp-body .pic img{ width:100%; }
+.grp-body .item + .item{ margin-top:clamp(28px,3.4vw,44px); }
+
+.item h4{
+  margin:0 0 10px;
+  font-size:var(--fs-label); font-weight:700;
+  line-height:1.2; letter-spacing:.05em;
+  text-transform:uppercase; color:var(--ink);
+}
+.item .promise{ font-size:clamp(19px,1.45vw,21px); font-weight:400; line-height:1.4; letter-spacing:-.008em; color:var(--pink); margin-bottom:12px; }
+.item p.say{ color:var(--soft); max-width:46ch; }
+
+.svc-close{ padding-block:clamp(40px,4.6vw,68px); }
+
+/* ================= 9 · HOW ================= */
+.how{ padding-block:clamp(64px,7.5vw,112px); background:var(--black); color:var(--on-black-dim); }
+.how .shell{ max-width:1400px; }
+.how .section-h{ max-width:16ch; color:var(--on-black); }
+.how .open{ margin-top:16px; font-size:var(--fs-lead); font-weight:600; letter-spacing:-.018em; color:var(--pink); }
+.flow{
+  margin-top:clamp(36px,4.2vw,60px);
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) auto minmax(0,1fr) auto minmax(0,.85fr) auto minmax(0,1.25fr);
+  gap:clamp(16px,1.8vw,24px); align-items:start;
+}
+.flow h3{ margin:0 0 12px; font-size:clamp(19px,1.5vw,22px); font-weight:700; line-height:1.16; letter-spacing:.015em; text-transform:uppercase; color:var(--on-black); }
+.flow p{ color:var(--on-black-dim); font-size:17px; line-height:1.5; }
+.flow .arw{ margin-top:6px; }
+
+/* ================= 10 · EVIDENCE ================= */
+.evidence{ padding-block:var(--bay); }
+.evidence-in{ display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:clamp(32px,4.5vw,72px); align-items:start; }
+.evidence .section-h{ max-width:14ch; }
+.evidence .said{ max-width:48ch; }
+.evidence .metrics{ margin-top:18px; max-width:36ch; font-size:var(--fs-lead); font-weight:500; line-height:1.35; letter-spacing:-.018em; color:var(--pink); }
+.evidence .last{ margin-top:18px; max-width:48ch; color:var(--ink); font-weight:500; }
+
+/* ================= 11 · WHO WE ARE ================= */
+.who{ padding-block:var(--bay); }
+.who-open{ max-width:62ch; }
+.who-open .section-h{ max-width:18ch; }
+.who-open p{ margin-top:16px; color:var(--soft); }
+.who-open .last{ color:var(--ink); font-weight:600; }
+
+.person{
+  margin-top:clamp(44px,5vw,76px);
+  display:grid; grid-template-columns:minmax(0,.72fr) minmax(0,1fr);
+  gap:clamp(28px,4vw,64px); align-items:start;
+}
+.person.flip{ grid-template-columns:minmax(0,1fr) minmax(0,.72fr); }
+.person.flip .shot{ order:2; }
+.person .shot img{ width:100%; }
+.person h3{
+  margin:0; font-size:clamp(28px,2.7vw,38px); font-weight:700;
+  line-height:1.08; letter-spacing:-.026em; color:var(--ink);
+}
+.person .role{ margin-top:8px; font-size:var(--fs-label); font-weight:600; color:var(--pink); letter-spacing:-.004em; }
+.person .bio{ margin-top:20px; max-width:56ch; }
+.person .bio p + p{ margin-top:14px; }
+
+/* ================= 12 · RECORD ================= */
+.record{ padding-block:var(--bay); background:var(--paper-deep); }
+.record-in{ display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:clamp(32px,4.5vw,80px); align-items:start; }
+.record-in .section-h{ max-width:14ch; }
+.record-in p + p{ margin-top:16px; }
+.record-in .tlink{ margin-top:26px; }
+
+/* ================= 13 · BUILD ================= */
+.build{ padding-block:var(--bay); }
+.build .section-h{ max-width:17ch; }
+.build .say{ margin-top:24px; max-width:62ch; }
+.build .say p + p{ margin-top:14px; }
+.build .say .close{ color:var(--ink); font-weight:600; }
+.chain{
+  margin-top:clamp(40px,4.6vw,68px);
+  display:flex; flex-wrap:wrap; align-items:center;
+  gap:clamp(12px,1.4vw,22px);
+  font-size:clamp(22px,2.4vw,34px);
+  font-weight:700; letter-spacing:-.022em; line-height:1.1;
+  color:var(--pink);
+}
+.chain .arw{ width:clamp(24px,2vw,30px); height:auto; }
+
+/* ================= 14 · FIT ================= */
+.fit{ padding-block:var(--bay); }
+.fit-in{ display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:clamp(32px,4.5vw,80px); align-items:start; }
+.fit-in .section-h{ max-width:12ch; }
+.fit-in .intro{ margin-top:18px; max-width:36ch; }
+.asks p{ font-size:clamp(20px,1.7vw,24px); font-weight:500; line-height:1.3; letter-spacing:-.018em; color:var(--ink); }
+.asks p + p{ margin-top:14px; }
+.asks .answer{ margin-top:26px; font-weight:700; color:var(--pink); }
+
+/* ================= 15 · ENDING ================= */
+.ending{ padding-block:clamp(64px,7.5vw,116px); }
+.ending .cta{ margin-top:30px; }
+
+/* ================= FOOT ================= */
+.foot{ padding-block:36px; border-top:1px solid var(--hair); }
+.foot-in{ display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+.foot img{ height:42px; width:auto; }
+.foot nav{ display:flex; gap:28px; flex-wrap:wrap; }
+.foot nav a{ font-size:16px; font-weight:500; color:var(--soft); text-decoration:none; }
+.foot nav a:hover{ color:var(--ink); }
+.foot .mark{ width:100%; font-size:16px; color:var(--soft); }
+
+/* ================= NARROWER ================= */
+@media (max-width:1100px){
+  .flow{ grid-template-columns:minmax(0,1fr); justify-items:start; row-gap:22px; }
+  .flow .turn{ transform:rotate(90deg); margin:2px 0 2px 12px; }
+  .people-copy{ grid-template-columns:minmax(0,1fr); }
+}
+
+@media (max-width:900px){
+  .ways{ display:none; }
+  .burger{ display:inline-block; }
+  .top-in{ height:72px; }
+  .brand img{ height:46px; }
+  .drawer{ display:none; border-top:1px solid var(--hair); background:var(--paper); }
+  .drawer.open{ display:block; }
+  .drawer ul{ padding-block:6px 20px; }
+  .drawer a{ display:block; padding:13px 0; font-size:20px; font-weight:500; color:var(--ink); text-decoration:none; }
+
+  .opening{ grid-template-columns:minmax(0,1fr); }
+  .opening-copy{ padding:clamp(36px,7vw,56px) var(--gutter) clamp(32px,6vw,44px); justify-self:stretch; max-width:none; }
+  .opening-shot{ min-height:0; aspect-ratio:5/4; }
+
+  .person,
+  .person.flip{ grid-template-columns:minmax(0,1fr); }
+  .person.flip .shot{ order:0; }
+  .problems-in,
+  .wants-in,
+  .people-in,
+  .idea-in,
+  .loses-in,
+  .evidence-in,
+  .record-in,
+  .fit-in{ grid-template-columns:minmax(0,1fr); }
+  .problems-shot{ order:-1; }
+  .idea-in{ gap:28px; }
+
+  .six{ grid-template-columns:minmax(0,1fr); row-gap:28px; }
+
+  .grp-split .grp-in{ grid-template-columns:minmax(0,1fr); gap:22px; }
+  .grp-wide .grp-set{ grid-template-columns:minmax(0,1fr); row-gap:32px; }
+  .grp-shot .grp-body,
+  .grp-shot.flip .grp-body{ grid-template-columns:minmax(0,1fr); }
+  .grp-shot.flip .grp-body .pic{ order:0; }
+}
+
+@media (max-width:620px){
+  .opening-shot{ aspect-ratio:4/5; }
+  .cta{ padding:16px 22px; font-size:15px; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  *{ transition-duration:.01ms !important; }
+}
+</style>
+
+</head>
+<body>
+
+<header class="top">
+  <div class="shell top-in">
+    <a class="brand" href="#top"><img src="img/logo.568abe1f.png" alt="Axcel" width="560" height="498"></a>
+    <nav class="ways" aria-label="Primary">
+      <a href="#services">What we do</a>
+      <a href="#who">Who we are</a>
+      <a href="#">Connect</a>
+      <a class="talk" href="#connect">Let&rsquo;s talk</a>
+    </nav>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="drawer">Menu</button>
+  </div>
+  <div class="drawer" id="drawer">
+    <div class="shell">
+      <ul>
+        <li><a href="#services">What we do</a></li>
+        <li><a href="#who">Who we are</a></li>
+        <li><a href="#">Connect</a></li>
+        <li><a href="#connect">Let&rsquo;s talk</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- 1 · OPENING ----------------------------------------------------------- -->
+<section class="opening">
+  <div class="opening-copy">
+    <h1 class="campaign">Make AI<br>prove it.</h1>
+    <p class="section-h">AI isn&rsquo;t the goal. A better business is.</p>
+    <p class="opening-outcome">AI might help you increase sales, improve margins, serve customers faster, create more capacity or simply give your people time back.</p>
+    <p class="opening-prove">It has to prove which one.</p>
+    <a class="cta" href="#connect">Show us what&rsquo;s slowing you down</a>
+  </div>
+  <div class="opening-shot">
+    <img fetchpriority="high" decoding="async" src="img/hero.74d9d0ae.jpg" alt="A team working together around a table covered with plans and sticky notes" width="1500" height="1250">
+  </div>
+</section>
+
+<!-- 2 · PROBLEMS ---------------------------------------------------------- -->
+<section class="problems">
+  <div class="shell problems-in">
+    <div>
+      <h2 class="section-h">Your business doesn&rsquo;t need an AI problem. It has business problems.</h2>
+      <ul class="problem-set">
+        <li>The quote that takes half a day.</li>
+        <li>The spreadsheet somebody rebuilds every Friday.</li>
+        <li>The same customer question answered again and again.</li>
+        <li>The information buried across emails and folders.</li>
+        <li>The process everyone knows is painful but nobody has fixed.</li>
+      </ul>
+      <div class="problems-after">
+        <p class="lead">That&rsquo;s where we start.</p>
+        <p class="dim">We help you work out what actually needs to change first, and whether AI needs to be part of the answer at all.</p>
+      </div>
+    </div>
+    <div class="problems-shot">
+      <img loading="lazy" decoding="async" src="img/customer.be04d88a.jpg" alt="A shop assistant serving a customer at a counter, showing them a screen" width="1000" height="1250">
+    </div>
+  </div>
+</section>
+
+<!-- 3 · WANTS ------------------------------------------------------------- -->
+<section class="wants">
+  <div class="shell wants-in">
+    <h2 class="section-h">What should get better?</h2>
+    <div>
+      <ul class="wants-list">
+        <li class="big">More sales</li>
+        <li class="mid">Better margins</li>
+        <li class="big pink">Faster service</li>
+        <li class="mid">More capacity</li>
+        <li class="big">Fewer mistakes</li>
+        <li class="mid">Better customer experience</li>
+      </ul>
+      <div class="wants-after">
+        <p class="lead">That&rsquo;s what we measure.</p>
+        <p class="dim">AI is simply one way we might get you there.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · PEOPLE ------------------------------------------------------------ -->
+<section class="people">
+  <div class="shell people-in">
+    <h2 class="section-h">Your people know where the value is.</h2>
+    <div class="people-copy">
+      <p class="dim">The people doing the work know where customers get frustrated, where sales opportunities disappear, where time gets wasted and which processes look simple on paper but aren&rsquo;t. That&rsquo;s why we involve them early.</p>
+      <p class="dim">We use AI to remove repetitive work, increase capacity and help people make better use of what they know. <span class="keep">Not remove the judgement your business depends on.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · IDEA -------------------------------------------------------------- -->
+<section class="idea">
+  <div class="shell idea-in">
+    <p class="quote">A clever idea is still just an idea until it improves something that matters.</p>
+    <img loading="lazy" decoding="async" src="img/light.0f0520da.jpg" alt="A hand holding a light bulb against a pink and blue sky" width="1120" height="1302">
+  </div>
+</section>
+
+<!-- 6 · PROOF TEST -------------------------------------------------------- -->
+<section class="test" id="proof">
+  <div class="shell">
+    <h2 class="section-h">Before AI gets the job, it has six questions to answer.</h2>
+    <div class="six">
+      <div><h3>Problem</h3><p>Is there a real problem worth solving?</p></div>
+      <div><h3>Alternatives</h3><p>Is AI actually the best answer?</p></div>
+      <div><h3>Value</h3><p>What will improve if this works?</p></div>
+      <div><h3>People + ownership</h3><p>Will people use it, and who is responsible for checking it?</p></div>
+      <div><h3>Risk</h3><p>What happens when it&rsquo;s wrong?</p></div>
+      <div><h3>Evidence</h3><p>Can we prove the result before spending more?</p></div>
+    </div>
+    <div class="verdict">
+      <p><span class="a">Pass? Scale it.</span><span class="b">Fail? Stop.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · LOSES ------------------------------------------------------------- -->
+<section class="loses">
+  <div class="shell">
+    <div class="loses-in">
+      <div>
+        <h2 class="section-h">Sometimes AI loses.</h2>
+        <p class="fine">And we&rsquo;re completely fine with that.</p>
+      </div>
+      <ul class="maybe">
+        <li><svg class="arw" width="32" height="19" viewBox="0 0 40 24" aria-hidden="true"><path d="M0 8h24V0l16 12-16 12v-8H0z" fill="currentColor"/></svg><span>Maybe the process needs fixing first.</span></li>
+        <li><svg class="arw" width="32" height="19" viewBox="0 0 40 24" aria-hidden="true"><path d="M0 8h24V0l16 12-16 12v-8H0z" fill="currentColor"/></svg><span>Maybe software you already own can solve it.</span></li>
+        <li><svg class="arw" width="32" height="19" viewBox="0 0 40 24" aria-hidden="true"><path d="M0 8h24V0l16 12-16 12v-8H0z" fill="currentColor"/></svg><span>Maybe simple automation is cheaper.</span></li>
+        <li><svg class="arw" width="32" height="19" viewBox="0 0 40 24" aria-hidden="true"><path d="M0 8h24V0l16 12-16 12v-8H0z" fill="currentColor"/></svg><span>Maybe your people need better training.</span></li>
+        <li><svg class="arw" width="32" height="19" viewBox="0 0 40 24" aria-hidden="true"><path d="M0 8h24V0l16 12-16 12v-8H0z" fill="currentColor"/></svg><span>Maybe AI works technically but does not improve the business enough to justify the cost or disruption.</span></li>
+      </ul>
+    </div>
+    <div class="loses-point">
+      <p class="section-h">The point isn&rsquo;t to use AI.</p>
+      <p class="section-h pink">The point is to improve the business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · SERVICES ---------------------------------------------------------- -->
+<section class="svc-open" id="services">
+  <div class="shell">
+    <h2 class="section-h">What can we actually help you with?</h2>
+    <p class="intro">You don&rsquo;t need to know which AI tool you need. You don&rsquo;t even need to know where to start. Tell us what you&rsquo;re trying to improve and we&rsquo;ll work from there.</p>
+  </div>
+</section>
+
+<section class="grp grp-wide">
+  <div class="shell">
+    <h3 class="grp-name">Find what&rsquo;s worth fixing<span class="stop">.</span></h3>
+    <div class="grp-set">
+      <div class="item">
+        <h4>AI opportunity &amp; adoption</h4>
+        <p class="promise">Work out where AI could actually make a difference.</p>
+        <p class="say">We work with your team to find opportunities across sales, operations, customer service, finance, marketing and everyday admin. Then we help you decide what is worth doing first.</p>
+      </div>
+      <div class="item">
+        <h4>Automation &amp; workflow improvement</h4>
+        <p class="promise">Not every problem needs AI.</p>
+        <p class="say">Sometimes the better answer is automation, integration or simply fixing a broken process. We help work that out too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="grp grp-split tint">
+  <div class="shell grp-in">
+    <h3 class="grp-name">Prove it<span class="stop">.</span></h3>
+    <div class="item">
+      <h4>AI pilots &amp; proof of value</h4>
+      <p class="promise">Test it before you bet on it.</p>
+      <p class="say">We take a real business problem and test whether AI can improve it. Small first, measurable result, then a decision about whether to scale.</p>
+    </div>
+  </div>
+</section>
+
+<section class="grp grp-shot">
+  <div class="shell">
+    <h3 class="grp-name">Put it to work<span class="stop">.</span></h3>
+    <div class="grp-body">
+      <div>
+        <div class="item">
+          <h4>AI tools &amp; implementation</h4>
+          <p class="promise">Turn the useful ideas into something people can actually use.</p>
+          <p class="say">We help select, configure and implement the right tools and workflows. Where possible, we start with technology the business already owns rather than adding another platform.</p>
+        </div>
+        <div class="item">
+          <h4>Sales &amp; customer experience</h4>
+          <p class="promise">Use AI where it can help you grow, not just save time.</p>
+          <p class="say">Find opportunities, prepare proposals, improve follow-up, make customer information easier to find, respond faster and remove repetitive work from sales and service teams.</p>
+        </div>
+      </div>
+      <div class="pic">
+        <img loading="lazy" decoding="async" src="img/factory.8ee3f5fa.jpg" alt="A worker in a high visibility vest using a laptop on the floor of a manufacturing plant" width="1500" height="1074">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="grp grp-shot flip tint">
+  <div class="shell">
+    <h3 class="grp-name">Help people use it<span class="stop">.</span></h3>
+    <div class="grp-body">
+      <div>
+        <div class="item">
+          <h4>AI training &amp; adoption</h4>
+          <p class="promise">Teach your people how to use AI for the work they actually do.</p>
+          <p class="say">Practical training built around the work people actually do. Axcel helps teams understand where AI can help, how to use it well, how to check its output and how to adopt it without removing the human judgement the business relies on.</p>
+        </div>
+      </div>
+      <div class="pic">
+        <img loading="lazy" decoding="async" src="img/learn.e999a0a8.jpg" alt="Colleagues working through a plan together at a table" width="1100" height="1100">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="grp grp-split">
+  <div class="shell grp-in">
+    <h3 class="grp-name">Keep it safe<span class="stop">.</span></h3>
+    <div class="item">
+      <h4>AI safety &amp; governance</h4>
+      <p class="promise">Use AI without losing control of it.</p>
+      <p class="say">We help put practical rules around AI use, data, privacy, human review, responsibility, approved tools and what happens when something goes wrong.</p>
+    </div>
+  </div>
+</section>
+
+<section class="grp grp-split tint">
+  <div class="shell grp-in">
+    <h3 class="grp-name">Keep improving it<span class="stop">.</span></h3>
+    <div class="item">
+      <h4>Ongoing AI support</h4>
+      <p class="promise">AI doesn&rsquo;t finish when the tool goes live.</p>
+      <p class="say">We can continue working with the business as people adopt it, new opportunities appear, tools change and new risks emerge.</p>
+    </div>
+  </div>
+</section>
+
+<section class="svc-close">
+  <div class="shell">
+    <a class="cta" href="#connect">Show us what&rsquo;s slowing you down</a>
+  </div>
+</section>
+
+<!-- 9 · HOW --------------------------------------------------------------- -->
+<section class="how">
+  <div class="shell">
+    <h2 class="section-h">So how do we actually do this?</h2>
+    <p class="open">We start inside your business.</p>
+    <div class="flow">
+      <div>
+        <h3>Look at the business</h3>
+        <p>We talk to the people doing the work and look at where sales are being missed, customers are waiting, admin is piling up, information is getting stuck or people are repeating the same work.</p>
+      </div>
+      <svg class="arw turn" width="38" height="23" viewBox="0 0 40 24" aria-hidden="true"><path d="M0 8h24V0l16 12-16 12v-8H0z" fill="currentColor"/></svg>
+      <div>
+        <h3>Find what&rsquo;s worth changing</h3>
+        <p>We identify the opportunities that could make a meaningful difference and compare AI with simpler options.</p>
+      </div>
+      <svg class="arw turn" width="38" height="23" viewBox="0 0 40 24" aria-hidden="true"><path d="M0 8h24V0l16 12-16 12v-8H0z" fill="currentColor"/></svg>
+      <div>
+        <h3>Test it on real work</h3>
+        <p>We use real work, real data and a small pilot to see what actually changes.</p>
+      </div>
+      <svg class="arw turn" width="38" height="23" viewBox="0 0 40 24" aria-hidden="true"><path d="M0 8h24V0l16 12-16 12v-8H0z" fill="currentColor"/></svg>
+      <div>
+        <h3>Put it to work and keep improving it</h3>
+        <p>If it earns its place we help implement it, train the people using it and put sensible controls around it. Then we keep looking for the next thing worth doing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · EVIDENCE --------------------------------------------------------- -->
+<section class="evidence">
+  <div class="shell evidence-in">
+    <h2 class="section-h">Small first. Evidence next. Scale last.</h2>
+    <div>
+      <p class="said dim">Before we recommend scaling anything, we agree on what success should look like.</p>
+      <p class="metrics">Hours saved, sales created, turnaround time reduced, rework reduced, customer response time improved, capacity gained.</p>
+      <p class="last">If we can&rsquo;t measure what changed, we haven&rsquo;t proved very much.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · WHO WE ARE ------------------------------------------------------- -->
+<section class="who" id="who">
+  <div class="shell">
+    <div class="who-open">
+      <h2 class="section-h">We come at AI from different directions.</h2>
+      <p>Eleanor brings technology, AI adoption, safety and commercial experience. Vlado brings research, product design, manufacturing and commercialisation.</p>
+      <p>Together, Eleanor and Vlado look beyond the technology to understand the people, processes, customers and commercial realities around it.</p>
+      <p class="last">Because most AI problems aren&rsquo;t really just AI problems.</p>
+    </div>
+
+    <div class="person">
+      <div class="shot">
+        <img loading="lazy" decoding="async" src="img/eleanor.516760c6.jpg" alt="Eleanor Harris" width="900" height="1125">
+      </div>
+      <div>
+        <h3>Eleanor Harris</h3>
+        <p class="role">AI Adoption, Safety &amp; Commercial Strategy</p>
+        <div class="bio">
+          <p class="dim">Eleanor Harris has spent more than 25 years working in technology and enterprise sales, including seven years at Cisco and working at IBM, working with organisations across complex technology environments.</p>
+          <p class="dim">Eleanor now focuses on a question that matters more than simply giving a business another AI tool: where can AI genuinely improve the business, and where can it create new problems?</p>
+          <p class="dim">Eleanor works across practical AI adoption, training and safety, helping organisations identify where AI can create measurable value while protecting the human judgement the business relies on.</p>
+          <p class="dim">Eleanor is also the founder of Headlights, an independent research project documenting real-world AI incidents and identifying the governance patterns behind them.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="person flip">
+      <div>
+        <h3>Vlado Baban</h3>
+        <p class="role">AI, Product Development &amp; Commercialisation</p>
+        <div class="bio">
+          <p class="dim">Vlado Baban works across the journey from identifying an opportunity to turning it into something that can be built, used and scaled.</p>
+          <p class="dim">Vlado&rsquo;s experience spans market research, product development, design thinking, prototyping, manufacturing, software selection, technology deployment and commercial growth. Vlado works with organisations to understand requirements, design practical solutions and take new products and services from concept through testing and implementation.</p>
+          <p class="dim">At Axcel, Vlado applies that experience to AI as well. That means looking beyond the AI model itself to the workflow, user requirements, data, systems, integration and commercial case around it.</p>
+          <p class="dim">When an AI opportunity proves worthwhile, Vlado can help shape what needs to be built and work with development capability to move it from prototype into a usable business solution.</p>
+        </div>
+      </div>
+      <div class="shot">
+        <img loading="lazy" decoding="async" src="img/vlado.6c4e8d58.jpg" alt="Vlado Baban" width="900" height="1124">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · RECORD ----------------------------------------------------------- -->
+<section class="record">
+  <div class="shell record-in">
+    <h2 class="section-h">We study what happens when AI gets it wrong too.</h2>
+    <div>
+      <p class="dim">Alongside our commercial work, we research real-world AI incidents. That means we see the predictable ways AI projects go wrong: misplaced trust, poor checking, weak controls, confusing ownership and technology used where it never really fitted the work.</p>
+      <p class="dim">We bring those lessons into the way we test AI, train people and put controls around it before small problems become expensive ones.</p>
+      <a class="tlink" href="https://useheadlights.com/" target="_blank" rel="noopener">Headlights &middot; What did the AI agent actually do?</a>
+    </div>
+  </div>
+</section>
+
+<!-- 13 · BUILD ----------------------------------------------------------- -->
+<section class="build">
+  <div class="shell">
+    <h2 class="section-h">From proof to something you can use.</h2>
+    <div class="say">
+      <p class="dim">Finding the opportunity is only the start.</p>
+      <p class="dim">When an idea proves itself, we can bring in the right development team to build it out, integrate it with your existing systems and turn a successful pilot into something your business can actually use.</p>
+      <p class="dim">That might mean an internal AI tool, workflow automation, customer-facing application, integration or a more complete product.</p>
+      <p class="close">We don&rsquo;t start by building technology. We build when the evidence says it&rsquo;s worth building.</p>
+    </div>
+    <p class="chain">
+      <span>Find it</span><svg class="arw" width="30" height="18" viewBox="0 0 40 24" aria-hidden="true"><path d="M0 8h24V0l16 12-16 12v-8H0z" fill="currentColor"/></svg><span>Test it</span><svg class="arw" width="30" height="18" viewBox="0 0 40 24" aria-hidden="true"><path d="M0 8h24V0l16 12-16 12v-8H0z" fill="currentColor"/></svg><span>Build it</span><svg class="arw" width="30" height="18" viewBox="0 0 40 24" aria-hidden="true"><path d="M0 8h24V0l16 12-16 12v-8H0z" fill="currentColor"/></svg><span>Put it to work</span><svg class="arw" width="30" height="18" viewBox="0 0 40 24" aria-hidden="true"><path d="M0 8h24V0l16 12-16 12v-8H0z" fill="currentColor"/></svg><span>Improve it</span>
+    </p>
+  </div>
+</section>
+
+<!-- 14 · FIT -------------------------------------------------------------- -->
+<section class="fit">
+  <div class="shell fit-in">
+    <div>
+      <h2 class="section-h">You don&rsquo;t need an AI department.</h2>
+      <p class="intro dim">Built for Australian businesses with roughly 10 to 100 people. You just need to know:</p>
+    </div>
+    <div class="asks">
+      <p>Where can AI genuinely help?</p>
+      <p>What&rsquo;s worth doing first?</p>
+      <p>What will it cost?</p>
+      <p>Will our people actually use it?</p>
+      <p>What could go wrong?</p>
+      <p>Is it worth it?</p>
+      <p class="answer">That&rsquo;s what we help you answer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 13 · ENDING ----------------------------------------------------------- -->
+<section class="ending" id="connect">
+  <div class="shell">
+    <p class="campaign">Make AI<br>prove it.</p>
+    <a class="cta" href="#connect">Show us what&rsquo;s slowing you down</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell foot-in">
+    <a href="#top"><img src="img/logo.568abe1f.png" alt="Axcel" width="560" height="498"></a>
+    <nav aria-label="Footer">
+      <a href="#services">What we do</a>
+      <a href="#who">Who we are</a>
+      <a href="#">Connect</a>
+    </nav>
+    <p class="mark">Axcel &middot; Homepage mock-up.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.querySelector('.burger'), d=document.getElementById('drawer');
+  if(!b||!d) return;
+  b.addEventListener('click',function(){
+    var open=d.classList.toggle('open');
+    b.setAttribute('aria-expanded',open?'true':'false');
+    b.textContent=open?'Close':'Menu';
+  });
+  d.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){
+      d.classList.remove('open');
+      b.setAttribute('aria-expanded','false');
+      b.textContent='Menu';
+    }
+  });
+})();
+</script>
+<!-- ARTIFACT-BODY-END -->
+</body>
+</html>
